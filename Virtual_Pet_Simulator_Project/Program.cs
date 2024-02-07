@@ -14,25 +14,31 @@ namespace VirtualPetSimulator
 
             Pet pet = new Pet(petType, petName);
 
-
+      
         }
-        class Pet
+    }
+    class Pet
+    {
+        private int petType;
+        private string petName;
+        private int hunger;
+        private int happiness;
+        private int health;
+
+        public Pet(int petType, string petName)
         {
-            private int petType;
-            private string petName;
-            private int hunger;
-            private int happiness;
-            private int health;
+            this.petType = petType;
+            this.petName = petName;
+            this.hunger = 5;
+            this.happiness = 5;
+            this.health = 5;
+        }
 
-            public Pet(int petType, string petName)
-            {
-                this.petType = petType;
-                this.petName = petName;
-                this.hunger = 5;
-                this.happiness = 5;
-                this.health = 5;
-            }
-
+        public void Feed()
+        {
+            hunger--;
+            health++;
+            Console.WriteLine($"{petName} was fed. Hunger: {hunger}, Health: {health}");
         }
     }
 }
