@@ -12,6 +12,27 @@ namespace VirtualPetSimulator
             Console.WriteLine("Enter your pet's name:");
             string petName = Console.ReadLine();
 
+            Pet pet = new Pet(petType, petName);
+
+
+        }
+        class Pet
+        {
+            private int petType;
+            private string petName;
+            private int hunger;
+            private int happiness;
+            private int health;
+
+            public Pet(int petType, string petName)
+            {
+                this.petType = petType;
+                this.petName = petName;
+                this.hunger = 5;
+                this.happiness = 5;
+                this.health = 5;
+            }
+
         }
     }
 }
