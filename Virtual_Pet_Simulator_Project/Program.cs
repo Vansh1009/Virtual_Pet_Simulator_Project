@@ -14,7 +14,33 @@ namespace VirtualPetSimulator
 
             Pet pet = new Pet(petType, petName);
 
-           
+            while (true)
+            {
+                Console.WriteLine("\nChoose an action: 1. Feed, 2. Play, 3. Rest, 4. Check Status, 5. Quit");
+                int action = int.Parse(Console.ReadLine());
+
+                switch (action)
+                {
+                    case 1:
+                        pet.Feed();
+                        break;
+                    case 2:
+                        pet.Play();
+                        break;
+                    case 3:
+                        pet.Rest();
+                        break;
+                    case 4:
+                        pet.CheckStatus();
+                        break;
+                    case 5:
+                        Console.WriteLine("Thanks for playing! Goodbye.");
+                        return;
+                    default:
+                        Console.WriteLine("Invalid action. Please try again.");
+                        break;
+                }
+            }
         }
     }
     class Pet
